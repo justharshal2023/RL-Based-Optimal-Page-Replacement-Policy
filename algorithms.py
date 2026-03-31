@@ -1,15 +1,3 @@
-"""
-Page Replacement Algorithms
-  - FIFO
-  - LRU
-  - Improved DQN Agent with:
-      1. Slot-aware + lookahead state representation
-      2. Training on randomly generated reference strings (generalisation)
-      3. Prioritised Experience Replay (PER)
-      4. Dueling Network Architecture (V + A streams)
-      5. Shaped reward (approximating Belady distance)
-"""
-
 import numpy as np
 import random
 from collections import deque
@@ -356,7 +344,7 @@ class DQNAgent:
         epsilon_decay=0.97,
         batch_size=64,
         target_update=10,
-        buffer_size=4000,
+        buffer_size=8000,
         lookahead=5,
         use_per=True,
         use_shaped_reward=True,
